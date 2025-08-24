@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Black Cat's Plague Hunt</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="icon.png">
+    </head>
+    <body>
+        <div id="story">
+            <h2>🐱 Medieval Europe, 1347 🐱</h2>
+            <p>The Black Death ravages the land. Superstitious villagers hunt
+                black cats, believing them cursed.</p>
+            <p>But you know the truth - rats carry the plague, and cats are
+                humanity's salvation!</p>
+            <p><strong>Hunt all 20 plague rats while avoiding the
+                    villagers.</strong></p>
+            <p>Hide in houses, leave silhouettes to confuse enemies, and save
+                Europe from pestilence!</p>
+            <button onclick="showGame()">Begin Your Quest</button>
+        </div>
+
+        <div id="game" style="display: none;">
+            <div class="grass top"></div>
+            <div class="grass bottom"></div>
+            <div class="grass left"></div>
+            <div class="grass right"></div>
+
+            <div id="ui">
+                <div>🐀 Rats: <span id="score">0</span>/20</div>
+                <div>💖 Lives: <span id="lives">8</span></div>
+                <div>👥 Villagers: <span id="villagers">1</span></div>
+                <div>⏱️ Time: <span id="time">0</span>s</div>
+            </div>
+
+            <div id="controls">
+                Desktop: WASD=Move, E=Silhouette, Q=Teleport<br>
+                Mobile: Use controls below
+            </div>
+
+            <button id="start" onclick="startGame()">START THE HUNT</button>
+
+            <div id="mobile-controls">
+                <div class="joystick" id="moveJoystick">
+                    <div class="joystick-inner"></div>
+                </div>
+                <div class="action-btn" ontouchstart="createSilhouette()"
+                    ontouchend>E</div>
+                <div class="action-btn" ontouchstart="teleportToSilhouette()"
+                    ontouchend>Q</div>
+            </div>
+
+            <div id="gameover">
+                <div id="endtext"></div>
+                <button onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
